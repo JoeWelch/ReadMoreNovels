@@ -26,19 +26,13 @@ public class BookService : IBookService
             Book book = new Book();
 
             book.Id = ((string)volume["id"]);
-            // book.Author = volume["authors"];
+
+            var authorList = jsonBook["authors"];
+
+            book.Author = jsonBook["authors"]?.AsArray().Deserialize<List<string>>();
+            book.Category = jsonBook["categories"]?.AsArray().Deserialize<List<string>>();
             book.Description = (string) jsonBook["description"];
-            
-            
-            // jsonVolume.GetProperty("id").GetString();
-            // book.Author = jsonBook.GetProperty("authors").Deserialize<List<string>>();
-            // book.Category = jsonBook.GetProperty("categories").Deserialize<List<string>>();
-
-            // string description = "No description available";
-            // jsonBook.TryGetProperty("description", out description)
-
-            // book.Description = jsonBook.GetProperty("description").GetString();
-            // book.Title = jsonBook.GetProperty("title").GetString();
+            book.Title = (string) jsonBook["title"];
 
             bookList.Add(book);
         }
