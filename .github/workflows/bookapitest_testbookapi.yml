@@ -9,8 +9,8 @@ on:
       - BookApiTest
   workflow_dispatch:
 
-env:
-  AZURE_WEBAPP_PACKAGE_PATH: 'BookApi' # set this to the path to your web app project, defaults to the repository root
+# env:
+#   AZURE_WEBAPP_PACKAGE_PATH: 'BookApi' # set this to the path to your web app project, defaults to the repository root
 
 jobs:
   build:
@@ -27,11 +27,11 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
-        working-directory: ${{AZURE_WEBAPP_PACKAGE_PATH}}
+        working-directory: BookApi
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
-        working-directory: ${{AZURE_WEBAPP_PACKAGE_PATH}}
+        working-directory: BookApi
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
