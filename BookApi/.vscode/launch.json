@@ -20,7 +20,9 @@
                 "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
             },
             "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ENV_GOOGLE_API_KEY": "AIzaSyBEXadpbdQWSGriQvBdsjXe0LZCq-qO8xM",
+                "ENV_GOOGLE_URL": "https://www.googleapis.com/books/v1"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
