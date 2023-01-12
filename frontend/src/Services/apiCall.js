@@ -66,6 +66,15 @@ export class apiCall {
         fetch('https://readmorenovels.azurewebsites.net/api/UserProfiles', userinfo)
     }
 
+    async searchUsers(emailAddress) {
+        //const url = process.env.REACT_APP_ENDPOINT + `/api/UserProfiles/email/${emailAddress}`;
+        const urlPrefix = process.env.REACT_APP_ENDPOINT;
+        console.log(emailAddress);
+        console.log(urlPrefix);
+        const url = 'https://bookapp-api-function-alysha.azurewebsites.net' + `/api/UserProfiles/email/${emailAddress}`;
+        return this.genericGet(url);
+    }
+
     // Verify Existing User Log In
     async loginUser(x) {
         const url = 'https://readmorenovels.azurewebsites.net' + `/api/user/login/${x}`;
