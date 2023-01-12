@@ -5,6 +5,7 @@ namespace ReadMoreApi.DBModels;
 public class DBBook{
     public int BookID{get; set;}
     public int UserID{get; set;}
+    public string ExternalID{get; set;}
     public string Title{get; set;}
     public string Author {get; set;}
     public Boolean IsCompleted {get; set;}

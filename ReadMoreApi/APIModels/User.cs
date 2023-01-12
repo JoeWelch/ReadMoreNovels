@@ -8,6 +8,8 @@ public class User{
     public string DisplayName {get; set;}
     public string EmailAddress{get; set;}
     public DateTime CreatedDate{get; set;}
+    public int TargetWeeks {get; set;}
+    public int TargetBookCount{get; set;}
 }
 
 

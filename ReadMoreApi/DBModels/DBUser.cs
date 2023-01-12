@@ -13,6 +13,12 @@ public class DBUser{
     public string EmailAddress{get; set;}
     [Column("createddate")]
     public DateTime CreatedDate{get; set;}
+
+    [Column("targetweeks")]
+    public int TargetWeeks {get; set;}
+
+    [Column("targetbookcount")]
+    public int TargetBookCount{get; set;}
 }
 
 

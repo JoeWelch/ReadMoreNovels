@@ -118,22 +118,44 @@ public class NovelService : INovelService
         return affectRecords;
     }
 
-
-
-
-    public Book GetBookStatus(int bookId, int userId)
+    public async Task<Book> GetBook(int bookId)
     {
-        throw new System.NotImplementedException();
+        var dbBook = await _context.Books.FindAsync(bookId);
+        if (dbBook == null)
+            throw new System.Exception($"Didn't find book {bookId}");
+
+        return _mapper.Map<Book>(dbBook);
     }
 
-    public List<Book> GetUserBooks(int userId)
+
+    // public Book GetBookStatus(int bookId)
+    // {
+    //     throw new System.NotImplementedException();
+    // }
+
+    public async Task<List<Book>> GetUserBooks(int userId)
     {
-        throw new System.NotImplementedException();
+         List<int> books = _context.Books
+            .Where(b => b.UserID == userId)
+            .Select(b => b.BookID).ToList<int>();
+
+        var bookList =  _context.Books
+            .Where(book => books.Contains(book.BookID))
+            .Select(dbBook => _mapper.Map<Book>(dbBook)).ToList();
+
+        return bookList;
     }
 
-    public Book SetBookStatus(int bookId, int userId, Book book)
+    public async Task<Book> UpdateBook(int bookId, Book book)
     {
-        throw new System.NotImplementedException();
+         if ((book.BookID > 0) && (book.BookID != bookId))
+            throw new System.Exception("User ID in path must match user ID passed in with object");
+
+        book.BookID = bookId;
+        var dbBook = _mapper.Map<DBBook>(book);
+        _context.Books.Update(dbBook);
+        await _context.SaveChangesAsync();
+        return book;
     }
 
     // Book Detail Apis

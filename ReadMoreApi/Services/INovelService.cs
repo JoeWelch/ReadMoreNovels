@@ -22,9 +22,9 @@ public interface INovelService
 
 
     // Book functions
-    Book SetBookStatus(int bookId, int userId, Book book);
-    Book GetBookStatus(int bookId, int userId);
-    List<Book> GetUserBooks(int userId);
+    Task<Book> UpdateBook(int bookId,Book book);
+    Task<Book> GetBook(int bookId);
+    Task<List<Book>> GetUserBooks(int userId);
 
     // Book Detail functions (calls external service)
     Task<BookDetail> GetBookDetail(int bookId);
