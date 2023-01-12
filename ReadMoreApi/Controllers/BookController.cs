@@ -22,7 +22,7 @@ public class BookController
         _novelService = novelService;
     }
 
-
+    
     [FunctionName("GetBookDetail")]
     public async Task<BookDetail> GetBookDetail(
         [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "book/detail/getbook/{bookId}")] HttpRequest req, int bookId,
@@ -72,12 +72,12 @@ public class BookController
     }
 
     [FunctionName("GetUserBooks")]
-    public async Task<List<Book>> GetUserBooks(
+    public List<Book> GetUserBooks(
         [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "book/{userId}")] HttpRequest req, int userId,
         ILogger log)
     {
         log.LogInformation($"Getting books for User Id={userId}");
-        return await _novelService.GetUserBooks(userId);
+        return  _novelService.GetUserBooks(userId);
     }
 }
 //[FunctionName("BookGet")]

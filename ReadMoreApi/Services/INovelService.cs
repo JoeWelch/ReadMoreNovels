@@ -18,13 +18,13 @@ public interface INovelService
     Task<int> AddFriend(int userId, int friendId);
     Task<int> RemoveFriend(int userId, int friendId);
 
-    // Goal functions
 
 
     // Book functions
     Task<Book> UpdateBook(int bookId,Book book);
     Task<Book> GetBook(int bookId);
-    Task<List<Book>> GetUserBooks(int userId);
+    List<Book> GetUserBooks(int userId);
+    
 
     // Book Detail functions (calls external service)
     Task<BookDetail> GetBookDetail(int bookId);
