@@ -1,13 +1,18 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace READMOREAPI.DBModels
-{
-    public class DBUser{
-        public int UserID{get; set;}
-        public string DisplayName {get; set;}
-        public string Email{get; set;}
-        public DateTime CreatedDate{get; set;}
-    }
+namespace ReadMoreApi.DBModels;
+
+public class DBUser{
+    [Column("userid")]
+    public int UserID{get; set;}
+    [Column("displayname")]
+    public string DisplayName {get; set;}
+
+    [Column("emailaddress")]
+    public string EmailAddress{get; set;}
+    [Column("createddate")]
+    public DateTime CreatedDate{get; set;}
 }
 
 

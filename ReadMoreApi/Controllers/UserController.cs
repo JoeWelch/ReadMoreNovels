@@ -1,71 +1,91 @@
-using System;
-using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
+using ReadMoreApi.Services;
+using ReadMoreApi.APIModels;
+using System.IO;
+using System.Collections.Generic;
 
-namespace READMOREAPI
+namespace ReadMoreApi.Controllers;
+
+public class UserController
 {
-    public class UserController
+    private readonly INovelService _novelService;
+
+    public UserController(INovelService novelService)
+    // public UserController
     {
-        [FunctionName("UserGet")]
-        public  async Task<IActionResult> UserGet(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "user/{userid}")] HttpRequest req, int userid,
-            ILogger log)
-        {
-            log.LogInformation($"Getting User: {userid}");
-
-            var result = "Testing";
-            return new OkObjectResult(await Task.FromResult(result));
-        }
-
-        [FunctionName("UserCreate")]
-        public  async Task<IActionResult> UserCreate(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "user")] HttpRequest req,
-            ILogger log)
-        {
-            log.LogInformation("Creating New User Item");
-
-            var result = "Testing";
-            return new OkObjectResult(await Task.FromResult(result));
-        }
-
-        [FunctionName("UserGetList")]
-        public  async Task<IActionResult> UserGetList(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "user")] HttpRequest req,
-            ILogger log)
-        {
-            log.LogInformation("Getting User Item List");
-
-            var result = "Testing";
-            return new OkObjectResult(await Task.FromResult(result));
-        }
-
-        [FunctionName("UserDelete")]
-        public  async Task<IActionResult> UserDelete(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "user/{userid}")] HttpRequest req, int userid,
-            ILogger log)
-        {
-            log.LogInformation($"Deleting User: {userid}");
-
-            var result = "Testing";
-            return new OkObjectResult(await Task.FromResult(result));
-        }
-
-        [FunctionName("UserUpdate")]
-        public  async Task<IActionResult> UserUpdate(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "user/{userid}")] HttpRequest req, int userid,
-            ILogger log)
-        {
-            log.LogInformation($"Updating User: {userid}");
-            
-            var result = "Testing";
-            return new OkObjectResult(await Task.FromResult(result));
-        }
+        _novelService = novelService;
+        // _novelService = new NovelService(new AppDbContext());
     }
+
+    [FunctionName("LoginUser")]
+    public  async Task<User> LoginUser(
+        [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "user/login/{emailName}")] HttpRequest req, string emailName,
+        ILogger log)
+    {
+        log.LogInformation($"Logging in User: {emailName}");
+        return await _novelService.LoginUser(emailName);
+    }
+
+    [FunctionName("ModifyUser")]
+    public  async Task<User> ModifyUser(
+        [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "user/{userId}")] HttpRequest req, int userId,
+        ILogger log)
+    {
+        log.LogInformation($"Modifying User: {userId}");
+        var user = await GetUserFromRequest(req, log);
+        return await _novelService.ModifyUser(userId, user);
+    }
+
+    [FunctionName("DeleteUser")]
+    public  async Task<int> DeleteUser(
+        [HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "user/{userId}")] HttpRequest req, int userId,
+        ILogger log)
+    {
+        log.LogInformation($"Deleting User: {userId}");
+        return await _novelService.DeleteUser(userId);
+    }
+
+    [FunctionName("GetUser")]
+    public  async Task<User> GetUser(
+        [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "user/{userId}")] HttpRequest req, int userId,
+        ILogger log)
+    {
+        log.LogInformation($"Getting User: {userId}");
+        return await _novelService.GetUser(userId);
+    }
+
+    [FunctionName("FindUsers")]
+    public  async Task<List<User>> FindUsers(
+        [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "user/search")] HttpRequest req, ILogger log)
+    {
+        string nameFilter = (req.Query["nameFilter"]);
+        nameFilter ??= "";  // If namefilter is null, make it the empty string
+
+        string emailFilter = req.Query["emailFilter"];
+        emailFilter ??= ""; // If emailfilter is null, make it the empty string
+
+        log.LogInformation($"Finding Users: emailFilter = {emailFilter}, nameFilter = {nameFilter}");
+        return await _novelService.FindUsers(emailFilter, nameFilter);
+    }
+
+    private async Task<User> GetUserFromRequest(HttpRequest req, ILogger log)
+    {
+        string requestBody = string.Empty;
+        using (StreamReader streamReader = new StreamReader(req.Body))
+        {
+            requestBody = await streamReader.ReadToEndAsync();
+        }
+        log.LogInformation($"Read User from body: {requestBody}");
+
+        var userBody = System.Text.Json.JsonSerializer.Deserialize<User>(requestBody, GlobalEnv.jsonOptions);
+        return userBody;    
+    }
+
 }
+
     
