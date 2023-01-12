@@ -79,10 +79,46 @@ public class NovelService : INovelService
         return Task.FromResult(userList);
     }
 
-    public int AddFriend(int userId)
+    // Friend functions
+    public async Task<int> AddFriend(int userId, int friendId)
     {
-        throw new System.NotImplementedException();
+        int affectRecords = 0;
+        var Friend = _context.Friends.FirstOrDefault(f => f.UserID == userId && f.FriendUserID == friendId);
+        if (Friend == null)
+        {
+            _context.Friends.Add(new DBFriend { FriendUserID = friendId, UserID = userId});
+            affectRecords = await _context.SaveChangesAsync();
+        }
+        return affectRecords;
     }
+
+    public List<User> GetFriends(int userId)
+    {
+        List<int> friends = _context.Friends
+            .Where(f => f.UserID == userId)
+            .Select(f => f.FriendUserID).ToList<int>();
+
+        var userList = _context.Users
+            .Where(user => friends.Contains(user.UserID))
+            .Select(dbUser => _mapper.Map<User>(dbUser)).ToList();
+
+        return userList;
+    }
+
+    public async Task<int> RemoveFriend(int userId, int friendId)
+    {
+        int affectRecords = 0;
+
+        var friendToDelete = _context.Friends.FirstOrDefault(f => f.UserID == userId && f.FriendUserID == friendId);
+        if (friendToDelete != null)
+        {
+            _context.Friends.Remove(friendToDelete);
+            affectRecords = await _context.SaveChangesAsync();
+        }
+        return affectRecords;
+    }
+
+
 
 
     public Book GetBookStatus(int bookId, int userId)
@@ -90,19 +126,7 @@ public class NovelService : INovelService
         throw new System.NotImplementedException();
     }
 
-    public List<User> GetFriends(int userId)
-    {
-        throw new System.NotImplementedException();
-    }
-
-
     public List<Book> GetUserBooks(int userId)
-    {
-        throw new System.NotImplementedException();
-    }
-
-
-    public int RemoveFriend(int userId)
     {
         throw new System.NotImplementedException();
     }

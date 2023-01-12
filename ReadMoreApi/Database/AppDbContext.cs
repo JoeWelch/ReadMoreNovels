@@ -9,7 +9,7 @@ public class AppDbContext : DbContext
     {}        
     public DbSet<DBUser> Users {get; set;}
     public DbSet<DBGoal> Goals {get; set;}
-    public DbSet<DBFriends> Friends {get; set;}
+    public DbSet<DBFriend> Friends {get; set;}
     public DbSet<DBBook> Books {get; set;}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -20,8 +20,8 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<DBGoal>()
             .ToTable("goal").HasKey(nameof(DBGoal.GoalID));
 
-        modelBuilder.Entity<DBFriends>()
-            .ToTable("friends").HasKey(nameof(DBFriends.FriendID));
+        modelBuilder.Entity<DBFriend>()
+            .ToTable("friends").HasKey(nameof(DBFriend.FriendID));
 
         modelBuilder.Entity<DBBook>()
             .ToTable("books").HasKey(nameof(DBBook.BookID));

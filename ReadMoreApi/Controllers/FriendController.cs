@@ -1,69 +1,54 @@
-using System;
-using System.IO;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
+using ReadMoreApi.Services;
+using System.Collections.Generic;
+using ReadMoreApi.APIModels;
 
 namespace ReadMoreApi.Controllers;
 
 public class FriendController
 {
-    [FunctionName("FriendGet")]
-    public  async Task<IActionResult> FriendGet(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "friend/{friendid}")] HttpRequest req, int friendid,
-        ILogger log)
-    {
-        log.LogInformation("Getting Friend Item");
 
-        var result = "Testing";
-        return new OkObjectResult(await Task.FromResult(result));
+    private readonly INovelService _novelService;
+
+    public FriendController(INovelService novelService)
+    {
+        _novelService = novelService;
     }
 
-    [FunctionName("FriendCreate")]
-    public  async Task<IActionResult> FriendCreate(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "friend")] HttpRequest req,
+    [FunctionName("GetFriends")]
+    public List<User> GetFriends(
+        [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "friend/{userId}")] HttpRequest req, 
+        int userId,
         ILogger log)
     {
-        log.LogInformation("Creating New Friend Item");
-
-        var result = "Testing";
-        return new OkObjectResult(await Task.FromResult(result));
+        log.LogInformation($"Getting friend: User = {userId}");
+        return _novelService.GetFriends(userId);
     }
 
-    [FunctionName("FriendGetList")]
-    public  async Task<IActionResult> FriendGetList(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "friend/{userid}")] HttpRequest req, int userid,
+    [FunctionName("FriendAdd")]
+    public  async Task<int> FriendAdd(
+        [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "friend/{userId}/{friendId}")] HttpRequest req, 
+        int userId,
+        int friendId,
         ILogger log)
     {
-        log.LogInformation("Creating New Friend Item");
-
-        var result = "Testing";
-        return new OkObjectResult(await Task.FromResult(result));
+        log.LogInformation($"Adding friend: User = {userId}, friend = {friendId}");
+        return await _novelService.AddFriend(userId, friendId);
     }
 
-    [FunctionName("FriendDelete")]
-    public  async Task<IActionResult> FriendDelete(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "friend/{friendid}")] HttpRequest req, int friendid,
+    [FunctionName("FriendRemove")]
+    public  async Task<int> FriendRemove(
+        [HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "friend/{userId}/{friendId}")] HttpRequest req, 
+        int userId,
+        int friendId,
         ILogger log)
     {
-        log.LogInformation("Creating New Friend Item");
-
-        var result = "Testing";
-        return new OkObjectResult(await Task.FromResult(result));
+        log.LogInformation($"Removing friend: User = {userId}, friend = {friendId}");
+        return await _novelService.RemoveFriend(userId, friendId);
     }
 
-    [FunctionName("FriendUpdate")]
-    public  async Task<IActionResult> FriendUpdate(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "friend/{friendid}")] HttpRequest req, int friendid,
-        ILogger log)
-    {
-        log.LogInformation("Creating New Friend Item");
-
-        var result = "Testing";
-        return new OkObjectResult(await Task.FromResult(result));
-    }
 }

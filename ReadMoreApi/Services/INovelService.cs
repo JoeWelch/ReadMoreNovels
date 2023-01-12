@@ -15,8 +15,8 @@ public interface INovelService
     
     // Friend functions
     List<User> GetFriends(int userId);
-    int AddFriend(int userId);
-    int RemoveFriend(int userId);
+    Task<int> AddFriend(int userId, int friendId);
+    Task<int> RemoveFriend(int userId, int friendId);
 
     // Goal functions
 
