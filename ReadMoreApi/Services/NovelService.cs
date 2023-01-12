@@ -118,9 +118,6 @@ public class NovelService : INovelService
         return affectRecords;
     }
 
-
-
-
     public Book GetBookStatus(int bookId, int userId)
     {
         throw new System.NotImplementedException();
@@ -139,7 +136,7 @@ public class NovelService : INovelService
     // Book Detail Apis
     public async Task<List<BookDetail>> SearchBookDetails(string authorFilter, string titleFilter)
     {
-        var searchUrl = $"{GlobalEnv.BOOKDETAILURL}/api/book/search/{authorFilter}";
+        var searchUrl = $"{GlobalEnv.BOOKDETAILURL}/api/book/search?authorFilter={authorFilter}&titleFilter={titleFilter}";
         var jsonResponse = await _httpClient.GetStringAsync(searchUrl);
         List<BookDetail> bookDetails = JsonSerializer.Deserialize<List<BookDetail>>(jsonResponse,  GlobalEnv.jsonOptions);
         return bookDetails;
