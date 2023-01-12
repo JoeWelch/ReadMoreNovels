@@ -54,16 +54,6 @@ export default function Books() {
                 <button onClick={handleSubmit}> Search </button>
                 <p>
                     <DataGrid columns={columns} rows={results} />
-
-{/*                      {results.map(x => (
-                    <div className="App-header">                       
-                        <img src={x.coverURL} />
-                        <p> {String(x.title)} </p>
-                        <p> {String(x.author)} </p>
-                        <p> {String(x.worksKey)} </p>
-                        <button onClick={() => window.location = `/bookdetail/${x.worksKey}` }> Read More </button>
-                    </div>                    
-                      ))}*/}
                 </p>
             </div>
         </div>

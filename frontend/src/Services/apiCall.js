@@ -36,45 +36,24 @@ export class apiCall {
             .then(json => { return json; })
     }
 
-    async searchBooks(formattedSearch) {
-        //const url = process.env.REACT_APP_ENDPOINT + `/api/Books/search/ol/${formattedSearch}`;
-        const url = 'https://bookapp-api-function-alysha.azurewebsites.net' + `/api/Books/search/${formattedSearch}`;
-        return this.genericGet(url);
+    async genericUpdate(url, body, methodName = 'PUT') {
+        return fetch(url, {
+            method: methodName,
+            body: JSON.stringify(body),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("HTTP error, status = " + response.status);
+                }
+                return response.json();
+            })
+            .then(json => { return json; })
     }
 
-    async searchBook(workskey) {
-        //const url = process.env.REACT_APP_ENDPOINT + `/api/Books/search/ol/key/${workskey}`;
-        const url = 'https://bookapp-api-function-alysha.azurewebsites.net' + `/api/Books/search/key/${workskey}`;
-        return this.genericGet(url);
-    }
-
-    async searchAuthors(formattedSearch) {
-        //const url = process.env.REACT_APP_ENDPOINT + `/api/Authors/search/ol/${formattedSearch}`;
-        const url = 'https://bookapp-api-function-alysha.azurewebsites.net' + `/api/Authors/search/${formattedSearch}`;
-        return this.genericGet(url);
-    }
-
-    async searchAuthor(authorkey) {
-        //const url = process.env.REACT_APP_ENDPOINT + `/api/Authors/search/ol/key/${authorkey}`;
-        const url = 'https://bookapp-api-function-alysha.azurewebsites.net' + `/api/Authors/search/key/${authorkey}`;
-        return this.genericGet(url);
-    }
-
-    async searchUsers(emailAddress) {
-        //const url = process.env.REACT_APP_ENDPOINT + `/api/UserProfiles/email/${emailAddress}`;
-        const urlPrefix = process.env.REACT_APP_ENDPOINT;
-        console.log(emailAddress);
-        console.log(urlPrefix);
-        const url = 'https://bookapp-api-function-alysha.azurewebsites.net' + `/api/UserProfiles/email/${emailAddress}`;
-        return this.genericGet(url);
-    }
-
-    async searchErrors() {
-        //const url = process.env.REACT_APP_ENDPOINT + `/api/Authors/search/ol/key/${authorkey}`;
-        const url = 'https://bookapp-api-function-alysha.azurewebsites.net' + `/api/Errors`;
-        return this.genericGet(url);
-    }
-
+    // Create an Account for New User
     async createUser(name, emailAddress) {
         const userinfo = {
             method: 'POST',
@@ -84,17 +63,77 @@ export class apiCall {
                 emailAddress: emailAddress
             })
         }
-        fetch(process.env.REACT_APP_ENDPOINT + `/api/UserProfiles`, userinfo)
+        fetch('https://readmorenovels.azurewebsites.net/api/UserProfiles', userinfo)
     }
+
+    // Verify Existing User Log In
+    async loginUser(x) {
+        const url = 'https://readmorenovels.azurewebsites.net' + `/api/user/login/${x}`;
+        return this.genericGet(url);
+    }
+
+    // Verify Existing User Log In
+    async getUserById(x) {
+        const url = 'https://readmorenovels.azurewebsites.net' + `/api/user/${x}`;
+        return this.genericGet(url);
+    }
+
+    // Find Users to Add Users 
+    async findUsers(x) {
+        const url = 'https://readmorenovels.azurewebsites.net' + `/api/UserProfiles/email/${x}`;
+        return this.genericGet(url);
+    }
+  
+    // Books 
+    async searchBooks(x) {
+        const url = 'https://readmorenovels.azurewebsites.net' + `/api/Books/${x}`;
+        return this.genericGet(url);
+    }
+
+    // Book Details of One Book
+    async searchBook(x) {
+        const url = 'https://readmorenovels.azurewebsites.net' + `/api/Books/key/${x}`;
+        return this.genericGet(url);
+    }
+
+    // My Books
+    async getMyBooks(x) {
+        const url = 'https://readmorenovels.azurewebsites.net' + `/api/user/books/${x}`;
+        return this.genericGet(url);
+    }
+
+    // My Books
+    async updateMyBooks(x) {
+        const url = 'https://readmorenovels.azurewebsites.net' + `/api/user/books/${x}`;
+        return this.genericUpdate(url);
+    }
+
+    //Dashboard
+    async getFriends(x) {
+        const url = 'https://readmorenovels.azurewebsites.net' + `/api/user/friends/${x}`;
+        return this.genericGet(url);
+    }
+
+    //Dashboard
+    async updateFriends(x) {
+        const url = 'https://readmorenovels.azurewebsites.net' + `/api/user/friends/${x}`;
+        return this.genericUpdate(url);
+    }
+
+    //Dashboard
+    async getProgress(x) {
+        const url = 'https://readmorenovels.azurewebsites.net' + `/api/user/progress/${x}`;
+        return this.genericGet(url);
+    }
+
+    //Dashboard
+    async getRecommendations(x) {
+        const url = 'https://readmorenovels.azurewebsites.net' + `/api/user/friends/${x}`;
+        return this.genericGet(url);
+    }
+
 }
 
 //export default apiCall;
-
-
-//Azure App Service
-//fetch('https://bookapp-backend-api-app-service.azurewebsites.net/api/UserProfiles', userinfo)
-
-//Azure Function
-//fetch('https://bookapp-api-function-alysha.azurewebsites.net/api/UserProfiles', userinfo)
 
 

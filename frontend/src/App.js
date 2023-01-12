@@ -9,6 +9,7 @@ import Books from './components/Books'
 import BooksLoggedOut from './components/BooksLoggedOut'
 import Home from './components/Home'
 import BookDetail from './components/BookDetail'
+import MyBooks from './components/MyBooks'
 import BookDetailLoggedOut from './components/BookDetailLoggedOut'
 import {
     BrowserRouter as Router,
@@ -72,6 +73,7 @@ function App() {
                                         <Nav.Link> <NavLink to="/" style={({ isActive }) => isActive ? { color: 'dimgray', fontWeight: '500', textDecoration: 'none' } : { color: 'gray', textDecoration: 'none' }}> Home </NavLink > </Nav.Link>
                                         <Nav.Link> <NavLink to="/about" style={({ isActive }) => isActive ? { color: 'dimgray', fontWeight: '500', textDecoration: 'none' } : { color: 'gray', textDecoration: 'none' }}> About </NavLink > </Nav.Link>
                                         <Nav.Link> <NavLink to="/books" style={({ isActive }) => isActive ? { color: 'dimgray', fontWeight: '500', textDecoration: 'none' } : { color: 'gray', textDecoration: 'none' }}> Books </NavLink > </Nav.Link>
+                                        <Nav.Link> <NavLink to="/my-books" style={({ isActive }) => isActive ? { color: 'dimgray', fontWeight: '500', textDecoration: 'none' } : { color: 'gray', textDecoration: 'none' }}> My Books </NavLink > </Nav.Link>
                                     </Nav>
                                     <Nav>
                                         <Navbar.Text className='WelcomeText'> Welcome, {userName}! </Navbar.Text>
@@ -90,6 +92,7 @@ function App() {
                             <Route path="/" index element={<Home />}></Route>
                             <Route path="/about" element={<About />}></Route>
                             <Route path="/books" element={<Books />}></Route>
+                            <Route path="/my-books" element={<MyBooks />}></Route>
                             <Route path="/bookdetail/:id" element={<BookDetail />}></Route>
                         </Routes>
                     </Router>
