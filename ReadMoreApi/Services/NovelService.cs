@@ -6,6 +6,8 @@ using ReadMoreApi.DBModels;
 using ReadMoreApi.Database;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Http;
+using System.Text.Json;
 
 namespace ReadMoreApi.Services;
 
@@ -13,6 +15,7 @@ public class NovelService : INovelService
 {
     private readonly AppDbContext _context;
     private readonly IMapper _mapper;
+    static HttpClient _httpClient = new HttpClient();
 
     public NovelService(AppDbContext context, IMapper mapper) 
     {
@@ -82,12 +85,6 @@ public class NovelService : INovelService
     }
 
 
-
-    public BookDetails GetBookDetails(int bookId)
-    {
-        throw new System.NotImplementedException();
-    }
-
     public Book GetBookStatus(int bookId, int userId)
     {
         throw new System.NotImplementedException();
@@ -110,13 +107,26 @@ public class NovelService : INovelService
         throw new System.NotImplementedException();
     }
 
-    public List<BookDetails> SearchBookDetails(string authorFilter, string titleFilter)
-    {
-        throw new System.NotImplementedException();
-    }
-
     public Book SetBookStatus(int bookId, int userId, Book book)
     {
         throw new System.NotImplementedException();
     }
+
+    // Book Detail Apis
+    public async Task<List<BookDetail>> SearchBookDetails(string authorFilter, string titleFilter)
+    {
+        var searchUrl = $"{GlobalEnv.BOOKDETAILURL}/api/book/search/{authorFilter}";
+        var jsonResponse = await _httpClient.GetStringAsync(searchUrl);
+        List<BookDetail> bookDetails = JsonSerializer.Deserialize<List<BookDetail>>(jsonResponse,  GlobalEnv.jsonOptions);
+        return bookDetails;
+    }
+
+    public async Task<BookDetail> GetBookDetail(int bookId)
+    {
+        var findUrl = $"{GlobalEnv.BOOKDETAILURL}/api/book/find/{bookId}";
+        var jsonResponse = await _httpClient.GetStringAsync(findUrl);
+        BookDetail bookDetail = JsonSerializer.Deserialize<BookDetail>(jsonResponse,  GlobalEnv.jsonOptions);
+        return bookDetail;
+    }
+
 }

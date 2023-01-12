@@ -7,6 +7,8 @@ public class GlobalEnv
 {
     static GlobalEnv()
     {
+        BOOKDETAILURL = Environment.GetEnvironmentVariable("ENV_BOOKDETAILURL"); // URL for access Book Detail Service
+
         DBHOST = Environment.GetEnvironmentVariable("ENV_DBHOST"); // Database host name
         DBNAME = Environment.GetEnvironmentVariable("ENV_DBNAME"); // Database name
         DBUSER = Environment.GetEnvironmentVariable("ENV_DBUSER"); // Database user name
@@ -19,6 +21,8 @@ public class GlobalEnv
         };
         jsonOptions.Converters.Add(new JsonStringEnumConverter());
     }
+
+    public static readonly string BOOKDETAILURL;
 
     public static readonly string DBHOST;
     public static readonly string DBNAME;

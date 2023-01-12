@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ReadMoreApi.APIModels;
 
-public class BookDetails
+public class BookDetail
 {
     public string Id { get; set; }
     public string Title { get; set; }

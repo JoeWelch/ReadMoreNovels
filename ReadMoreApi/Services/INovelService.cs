@@ -25,7 +25,8 @@ public interface INovelService
     Book SetBookStatus(int bookId, int userId, Book book);
     Book GetBookStatus(int bookId, int userId);
     List<Book> GetUserBooks(int userId);
-    BookDetails GetBookDetails(int bookId);
 
-    List<BookDetails> SearchBookDetails(string authorFilter, string titleFilter);
+    // Book Detail functions (calls external service)
+    Task<BookDetail> GetBookDetail(int bookId);
+    Task<List<BookDetail>> SearchBookDetails(string authorFilter, string titleFilter);
 }
