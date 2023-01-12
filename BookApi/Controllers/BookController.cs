@@ -19,18 +19,20 @@ public class BookController : ControllerBase
     }
 
     [HttpGet]
-    [Route("api/book/search/{author}")]
-    public async Task<List<Book>> SearchBooks(string author)
-    // public async Task<string> SearchBooks(string author)
+    [Route("api/book/search")]
+    public async Task<List<Book>> SearchBooks(string authorFilter, string titleFilter)
     {
-        return await _bookService.SearchBooks(author);
-        // var book = new Book{
-        //     Author = new List<string> { "Frank N. Stein", "SecondAuthor"},
-        //     Category = new List<string> { "Horror", "Comedy"},
-        //     Description = "This is a great book!",
-        //     Id = "107",
-        //     Title = "How I came to life"
-        // };
-        // return new List<Book> { book };
+        authorFilter ??= "";
+        titleFilter ??= "";
+
+        return await _bookService.SearchBooks(authorFilter, titleFilter);
     }
+
+    [HttpGet]
+    [Route("api/book/find/{bookId}")]
+    public async Task<Book> FindBook(string bookId)
+    {
+        return await _bookService.FindBook(bookId);
+    }
+
 }
