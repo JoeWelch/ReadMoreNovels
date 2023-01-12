@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 
 
-namespace StockLearning
+namespace READMOREAPI
 
 {
 
@@ -26,7 +26,7 @@ namespace StockLearning
 
 
 
-            API_VERSION = "0.1.2";
+            API_VERSION = "0.0.1";
 
 
 

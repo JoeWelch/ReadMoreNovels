@@ -2,7 +2,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using READMOREAPI.DBModels;
 
-namespace StockLearning.Database
+namespace READMOREAPI.Database
 {
     public class AppDbContext : DbContext
     {
