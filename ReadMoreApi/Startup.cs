@@ -14,6 +14,7 @@ namespace READMOREAPI
         public override void Configure(IFunctionsHostBuilder builder)
         {
             builder.Services.AddScoped<INovelService, NovelService>();
+        
             builder.Services.AddDbContext<AppDbContext>(optionsBuilder =>
             {
                 string connString = string.Format("Server={0};Database={1};Port=5432;Username={2};Password={3};SSLMode=Require;Trust Server Certificate=true",

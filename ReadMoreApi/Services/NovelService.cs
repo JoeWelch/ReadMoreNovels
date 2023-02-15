@@ -158,6 +158,17 @@ public class NovelService : INovelService
         return book;
     }
 
+    public async Task<int> CreateBook(int userId, Book book)
+    {
+        int affectRecords = 0;
+        var bookCheck = _context.Books.FirstOrDefault(b => b.UserID == userId && b.BookID == book.BookID);
+        if (bookCheck == null)
+        {
+            _context.Books.Add(_mapper.Map<DBBook>(book));
+            affectRecords = await _context.SaveChangesAsync();
+        }
+        return affectRecords;
+    }
     // Book Detail Apis
     public async Task<List<BookDetail>> SearchBookDetails(string authorFilter, string titleFilter)
     {

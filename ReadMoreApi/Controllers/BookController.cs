@@ -22,7 +22,7 @@ public class BookController
         _novelService = novelService;
     }
 
-    
+
     [FunctionName("GetBookDetail")]
     public async Task<BookDetail> GetBookDetail(
         [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "book/detail/getbook/{bookId}")] HttpRequest req, int bookId,
@@ -64,9 +64,6 @@ public class BookController
         log.LogInformation($"Updating book {bookId}");
             var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             Book updated = System.Text.Json.JsonSerializer.Deserialize<Book>(requestBody, GlobalEnv.jsonOptions);
-
-            
-            
             var result = await _novelService.UpdateBook(bookId,updated);
             return result;
     }
@@ -79,6 +76,16 @@ public class BookController
         log.LogInformation($"Getting books for User Id={userId}");
         return  _novelService.GetUserBooks(userId);
     }
+
+    [FunctionName("CreateBook")]
+    public async Task<int> CreateBook(
+        [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "book/{userId}")] HttpRequest req, int userId,
+        ILogger log)
+    {
+        log.LogInformation($"Creating Book under User Id={userId}");
+        return  await _novelService.CreateBook(userId);
+    }
+
 }
 //[FunctionName("BookGet")]
     // public  async Task<IActionResult> BookGet(
