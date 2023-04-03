@@ -48,6 +48,21 @@ export const getFriends = (userId) => {
     ];
 }
 
+export const getFriendBooks = (userId) => {
+    return [
+        {
+            "Title": "The Kite Runner",
+            "Author": "Salam Khalied",
+            "Description": "Sample description for book",
+        },
+        {
+            "Title": "Puddinhead Wilson",
+            "Author": "Mark Twain",
+            "Description": "Funny book by Mark Twain",
+        }
+    ];
+}
+
 export const addFriend = (userId) => {
     return {
         "UserId" : 2,
@@ -72,5 +87,31 @@ export const searchBooks = (authorFilter, titleFilter) => {
             "Author": "Mark Twain",
             "Description": "Funny book by Mark Twain",
         }
-    ];
+    ];   
 }
+export const addGoal = (numberBooks, goalDate) => {
+    return {
+        "GoalID":1,
+        "TargetNumber":numberBooks,
+        "GoalEndDate": goalDate,
+        "booksCompleted":0,
+        "isCompleted": false,
+        "createdDate": Date.now(),
+        "completedDate":"2/2/23",
+    }
+}
+export const trackGoal = (goalID, numberCompleted) => {
+    return {
+        
+        "booksCompleted":0 + numberCompleted
+       
+    }
+}
+export const deleteGoal = (goalID) => {
+    return 1
+}
+
+
+
+
+
