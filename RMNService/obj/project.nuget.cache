@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mjDUbH+Vm14OG6qhK9iVvKcX4qhDzFNv6+ZnUNyIm886z4t90YXRFb2Ugu6qGSqU56v87ygiPMicPlQlk7Mp8A==",
+  "dgSpecHash": "Onwr9oNOjen2tOtx2UZTTn2hCqViSPEe0iTJE0mzRzvzfVk7ZfeI3wU6cMYsH1sIwtK5qc/CiPjn0glwLsaq0Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MBurns\\OneDrive - Launch Consulting Group\\Documents\\projects\\ReadMoreNovels\\ReadMoreNovels.csproj",
+  "projectFilePath": "C:\\Users\\MBurns\\OneDrive - Launch Consulting Group\\Documents\\projects\\ReadMoreNovels\\RMNService\\ReadMoreNovels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MBurns\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.0\\microsoft.aspnetcore.openapi.8.0.0.nupkg.sha512",
     "C:\\Users\\MBurns\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
