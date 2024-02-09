@@ -1,0 +1,8 @@
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Debug\net8.0\ReadMoreNovels.exe
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Debug\net8.0\ReadMoreNovels.dll
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Debug\net8.0\ReadMoreNovels.pdb
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll

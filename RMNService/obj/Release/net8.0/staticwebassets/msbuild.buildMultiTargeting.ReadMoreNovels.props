@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ReadMoreNovels.props" />
+</Project>
