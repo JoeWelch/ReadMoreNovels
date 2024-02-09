@@ -46,7 +46,7 @@ jobs:
 
   deploy:
     name: Deploy RMNService to Azure Web App
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action == 'closed')
+    if: github.event_name == 'push'
     runs-on: windows-latest
     needs: build
     environment:
