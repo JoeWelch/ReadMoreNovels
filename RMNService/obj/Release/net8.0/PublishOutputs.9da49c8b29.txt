@@ -1,0 +1,12 @@
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Release\net8.0\publish\ReadMoreNovels.exe
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Release\net8.0\publish\appsettings.Development.json
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Release\net8.0\publish\appsettings.json
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Release\net8.0\publish\ReadMoreNovels.dll
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Release\net8.0\publish\ReadMoreNovels.deps.json
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Release\net8.0\publish\ReadMoreNovels.runtimeconfig.json
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Release\net8.0\publish\ReadMoreNovels.pdb
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Release\net8.0\publish\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Release\net8.0\publish\Microsoft.OpenApi.dll
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Release\net8.0\publish\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Release\net8.0\publish\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Release\net8.0\publish\Swashbuckle.AspNetCore.SwaggerUI.dll
