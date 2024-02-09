@@ -465,11 +465,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MBurns\\OneDrive - Launch Consulting Group\\Documents\\projects\\ReadMoreNovels\\ReadMoreNovels.csproj",
+      "projectUniqueName": "C:\\Users\\MBurns\\OneDrive - Launch Consulting Group\\Documents\\projects\\ReadMoreNovels\\RMNService\\ReadMoreNovels.csproj",
       "projectName": "ReadMoreNovels",
-      "projectPath": "C:\\Users\\MBurns\\OneDrive - Launch Consulting Group\\Documents\\projects\\ReadMoreNovels\\ReadMoreNovels.csproj",
+      "projectPath": "C:\\Users\\MBurns\\OneDrive - Launch Consulting Group\\Documents\\projects\\ReadMoreNovels\\RMNService\\ReadMoreNovels.csproj",
       "packagesPath": "C:\\Users\\MBurns\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MBurns\\OneDrive - Launch Consulting Group\\Documents\\projects\\ReadMoreNovels\\obj\\",
+      "outputPath": "C:\\Users\\MBurns\\OneDrive - Launch Consulting Group\\Documents\\projects\\ReadMoreNovels\\RMNService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MBurns\\AppData\\Roaming\\NuGet\\NuGet.Config",
