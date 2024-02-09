@@ -6,7 +6,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-var version = "0.0.5";
+var version = "0.0.6";
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
