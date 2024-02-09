@@ -17,6 +17,7 @@ on:
 
 jobs:
   build:
+    name: Build RMNService
     if: github.event_name == 'push' || github.event_name == 'pull_request'
     runs-on: windows-latest
 
@@ -44,6 +45,7 @@ jobs:
           path: ${{env.DOTNET_ROOT}}/myapp
 
   deploy:
+    name: Deploy RMNService to Azure Web App
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action == 'closed')
     runs-on: windows-latest
     needs: build
