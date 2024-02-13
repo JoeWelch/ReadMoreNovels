@@ -1,0 +1,8 @@
+.ui.icon.input {
+    display: flex;
+}
+
+.ui.input {
+    width: 100%;
+    margin-bottom: 1rem;
+}
