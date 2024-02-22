@@ -1,8 +1,9 @@
-import { useCallback } from "react";
-import { Image, Input } from "semantic-ui-react";
+import { useCallback, useState } from "react";
+import { Form, Image, Input } from "semantic-ui-react";
 import { formatPublishDate } from "../../utils/String";
 
 import "./search.css";
+import { useSearch } from "../../hooks/mutations/Search";
 
 const BOOK = {
   id: 123456,
@@ -22,20 +23,31 @@ const BOOK = {
 };
 
 const Search = () => {
-    // const [searchResults, setSearchResults] = useState([BOOK]);
+  const [searchTerm, setSearchTerm] = useState("");
+  // const [searchResults, setSearchResults] = useState([BOOK]);
+  const mutation = useSearch();
 
-  const handleSearchChange = useCallback((searchTerm) => {
-    console.log(searchTerm);
+  const handleSearchChange = useCallback((input) => {
+    setSearchTerm(input);
   }, []);
+
+  const handleSearchSubmit = useCallback(() => {
+    if (searchTerm.length > 0) {
+      mutation.mutate(searchTerm);
+    }
+  }, [mutation, searchTerm]);
 
   return (
     <div className="search-container">
-      <h2>Search</h2>
-      <Input
-        placeholder="title, author, genre, etc..."
-        onChange={(e) => handleSearchChange(e.target.value)}
-        className="search-input"
-      />
+      <Form onSubmit={handleSearchSubmit}>
+        <h2>Search</h2>
+        <Input
+          placeholder="title, author, genre, etc..."
+          value={searchTerm}
+          onChange={(e) => handleSearchChange(e.target.value)}
+          className="search-input"
+        />
+      </Form>
       <div className="search-results-container">
         <div className="search-result">
           <div className="search-result-top-row">
@@ -60,6 +72,5 @@ const Search = () => {
     </div>
   );
 };
-
 
 export default Search;
