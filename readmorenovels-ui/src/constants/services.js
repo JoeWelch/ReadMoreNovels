@@ -1,0 +1,1 @@
+export const BOOK_SERVICE_API = '/api/book/';

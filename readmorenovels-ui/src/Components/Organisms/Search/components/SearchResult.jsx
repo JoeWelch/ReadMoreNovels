@@ -20,7 +20,7 @@ const SearchResult = ({ result }) => {
           <div className="detail">{`${result.publisher}, ${formatPublishDate(
             result.publishedDate
           )}`}</div>
-          <div className="detail">{`${result.genre}, ${result.language}`}</div>
+          <div className="detail">{`${result.genres}, ${result.language}`}</div>
           <div className="detail">{`${result.pageCount} pages`}</div>
           <div className="detail">{result.ISBN_13}</div>
         </div>
