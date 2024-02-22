@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MBurns\\OneDrive - Launch Consulting Group\\Documents\\projects\\ReadMoreNovels\\RMNService\\ReadMoreNovels.csproj": {}
+    "C:\\Users\\PConstantin\\projects\\ReadMoreNovels\\RMNService\\ReadMoreNovels.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MBurns\\OneDrive - Launch Consulting Group\\Documents\\projects\\ReadMoreNovels\\RMNService\\ReadMoreNovels.csproj": {
+    "C:\\Users\\PConstantin\\projects\\ReadMoreNovels\\RMNService\\ReadMoreNovels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MBurns\\OneDrive - Launch Consulting Group\\Documents\\projects\\ReadMoreNovels\\RMNService\\ReadMoreNovels.csproj",
+        "projectUniqueName": "C:\\Users\\PConstantin\\projects\\ReadMoreNovels\\RMNService\\ReadMoreNovels.csproj",
         "projectName": "ReadMoreNovels",
-        "projectPath": "C:\\Users\\MBurns\\OneDrive - Launch Consulting Group\\Documents\\projects\\ReadMoreNovels\\RMNService\\ReadMoreNovels.csproj",
-        "packagesPath": "C:\\Users\\MBurns\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MBurns\\OneDrive - Launch Consulting Group\\Documents\\projects\\ReadMoreNovels\\RMNService\\obj\\",
+        "projectPath": "C:\\Users\\PConstantin\\projects\\ReadMoreNovels\\RMNService\\ReadMoreNovels.csproj",
+        "packagesPath": "C:\\Users\\PConstantin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PConstantin\\projects\\ReadMoreNovels\\RMNService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\MBurns\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\PConstantin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -68,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
