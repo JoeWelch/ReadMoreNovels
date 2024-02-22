@@ -22,14 +22,14 @@ public class BookController : ControllerBase
     
 
     [HttpGet]
-    [Route("API/book/{id}")]
+    [Route("api/book/{id}")]
     public Book GetBook(int id)
     {
         return _bookService.GetBook(id);
     }
     
 
-    [HttpGet]
+    [HttpPost]
     [Route("api/book/search/{query}")]
     public List<Book> BookSearch(string query)
     {
