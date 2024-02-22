@@ -34,9 +34,9 @@ project.lock.json
 x64/
 x86/
 bld/
-bin/*
-obj/*
-log/*
+**/bin/**
+**/obj/**
+**/log/**
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
