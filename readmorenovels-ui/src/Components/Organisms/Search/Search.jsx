@@ -1,9 +1,8 @@
-import { useCallback, useState } from "react";
-import { Form, Image, Input } from "semantic-ui-react";
-import { formatPublishDate } from "../../utils/String";
-
-import "./search.css";
-import { useSearch } from "../../hooks/mutations/Search";
+import { useCallback, useMemo, useState } from "react";
+import { Form, Input } from "semantic-ui-react";
+import "./styles/search.css";
+import { useSearch } from "../../../hooks/mutations/Search";
+import SearchResult from "./components/SearchResult";
 
 const BOOK = {
   id: 123456,
@@ -22,9 +21,9 @@ const BOOK = {
     "https://upload.wikimedia.org/wikipedia/en/a/a2/How_to_change_your_mind_pollan.jpg",
 };
 
-const Search = () => {
+export const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  // const [searchResults, setSearchResults] = useState([BOOK]);
+  const [searchResults, setSearchResults] = useState([BOOK, BOOK, BOOK, BOOK]);
   const mutation = useSearch();
 
   const handleSearchChange = useCallback((input) => {
@@ -34,8 +33,15 @@ const Search = () => {
   const handleSearchSubmit = useCallback(() => {
     if (searchTerm.length > 0) {
       mutation.mutate(searchTerm);
+      setSearchResults([BOOK]);
     }
   }, [mutation, searchTerm]);
+
+  const renderedResults = useMemo(() => {
+    return searchResults.map((result, index) => {
+      return <SearchResult result={result} key={index} />
+    });
+  }, [searchResults]); 
 
   return (
     <div className="search-container">
@@ -49,28 +55,8 @@ const Search = () => {
         />
       </Form>
       <div className="search-results-container">
-        <div className="search-result">
-          <div className="search-result-top-row">
-            <div className="search-result-image-container">
-              <Image src={BOOK.thumbnail} size={"large"} />
-            </div>
-            <div className="search-result-info-container">
-              <h1 className="search-result-title">{BOOK.title}</h1>
-              <h2 className="search-result-author">{BOOK.author}</h2>
-              <p className="search-result-description">{BOOK.description}</p>
-            </div>
-          </div>
-          <div className="search-result-details">
-            <p>{`${BOOK.genre}, ${BOOK.language}`}</p>
-            {`${BOOK.publisher}, ${formatPublishDate(BOOK.publishedDate)}, ${
-              BOOK.pageCount
-            } pages`}
-            <p>{BOOK.ISBN_13}</p>
-          </div>
-        </div>
+        {renderedResults}
       </div>
     </div>
   );
 };
-
-export default Search;
