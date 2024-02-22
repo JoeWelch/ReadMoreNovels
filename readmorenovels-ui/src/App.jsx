@@ -13,8 +13,9 @@ function App() {
     <>
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
-        <div className="app-header"></div>
-        <Header as="h1" content="Read More Novels" textAlign="center" />
+        <div className="app-header">
+          <Header as="h1" content="Read More Novels" textAlign="center" />
+        </div>
         <div className="app-body">
           <Search />
         </div>
