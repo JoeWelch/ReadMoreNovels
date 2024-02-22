@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PConstantin\\projects\\ReadMoreNovels\\RMNService\\ReadMoreNovels.csproj": {}
+    "C:\\Users\\PConstantin\\projects\\ReadMoreNovels\\BookService\\BookService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PConstantin\\projects\\ReadMoreNovels\\RMNService\\ReadMoreNovels.csproj": {
+    "C:\\Users\\PConstantin\\projects\\ReadMoreNovels\\BookService\\BookService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PConstantin\\projects\\ReadMoreNovels\\RMNService\\ReadMoreNovels.csproj",
-        "projectName": "ReadMoreNovels",
-        "projectPath": "C:\\Users\\PConstantin\\projects\\ReadMoreNovels\\RMNService\\ReadMoreNovels.csproj",
+        "projectUniqueName": "C:\\Users\\PConstantin\\projects\\ReadMoreNovels\\BookService\\BookService.csproj",
+        "projectName": "BookService",
+        "projectPath": "C:\\Users\\PConstantin\\projects\\ReadMoreNovels\\BookService\\BookService.csproj",
         "packagesPath": "C:\\Users\\PConstantin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PConstantin\\projects\\ReadMoreNovels\\RMNService\\obj\\",
+        "outputPath": "C:\\Users\\PConstantin\\projects\\ReadMoreNovels\\BookService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PConstantin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,10 +43,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.AspNetCore.OpenApi": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
