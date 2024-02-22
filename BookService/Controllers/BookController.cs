@@ -12,9 +12,9 @@ public class BookController : ControllerBase
 
     private readonly ILogger<BookController> _logger;
 
-    private readonly IBookService _bookService;
+    private readonly IGoogleBook _bookService;
 
-    public BookController(ILogger<BookController> logger, IBookService bookService)
+    public BookController(ILogger<BookController> logger, IGoogleBook bookService)
     {
         _logger = logger;
         _bookService = bookService;

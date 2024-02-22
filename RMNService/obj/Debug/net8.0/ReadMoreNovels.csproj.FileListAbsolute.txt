@@ -6,3 +6,37 @@ C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNo
 C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\MBurns\OneDrive - Launch Consulting Group\Documents\projects\ReadMoreNovels\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\bin\Debug\net8.0\appsettings.json
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\bin\Debug\net8.0\ReadMoreNovels.exe
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\bin\Debug\net8.0\ReadMoreNovels.deps.json
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\bin\Debug\net8.0\ReadMoreNovels.runtimeconfig.json
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\bin\Debug\net8.0\ReadMoreNovels.dll
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\bin\Debug\net8.0\ReadMoreNovels.pdb
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\ReadMoreNovels.csproj.AssemblyReference.cache
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\ReadMoreNovels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\ReadMoreNovels.AssemblyInfoInputs.cache
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\ReadMoreNovels.AssemblyInfo.cs
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\ReadMoreNovels.csproj.CoreCompileInputs.cache
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\ReadMoreNovels.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\ReadMoreNovels.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\ReadMoreNovels.sourcelink.json
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\staticwebassets\msbuild.ReadMoreNovels.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\staticwebassets\msbuild.build.ReadMoreNovels.props
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ReadMoreNovels.props
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ReadMoreNovels.props
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\scopedcss\bundle\ReadMoreNovels.styles.css
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\ReadMore.60F64FD8.Up2Date
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\ReadMoreNovels.dll
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\refint\ReadMoreNovels.dll
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\ReadMoreNovels.pdb
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\ReadMoreNovels.genruntimeconfig.cache
+C:\Users\PConstantin\projects\ReadMoreNovels\RMNService\obj\Debug\net8.0\ref\ReadMoreNovels.dll

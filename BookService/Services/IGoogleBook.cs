@@ -4,7 +4,7 @@ using BookService.ApiModels;
 
 namespace BookService.Services{
 
-    public interface IBookService
+    public interface IGoogleBook
     {
         List<Book> BookSearch(string query);
         Book GetBook(int id);

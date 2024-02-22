@@ -31,3 +31,5 @@ C:\Users\PConstantin\projects\ReadMoreNovels\BookService\obj\Debug\net8.0\refint
 C:\Users\PConstantin\projects\ReadMoreNovels\BookService\obj\Debug\net8.0\BookService.pdb
 C:\Users\PConstantin\projects\ReadMoreNovels\BookService\obj\Debug\net8.0\BookService.genruntimeconfig.cache
 C:\Users\PConstantin\projects\ReadMoreNovels\BookService\obj\Debug\net8.0\ref\BookService.dll
+C:\Users\PConstantin\projects\ReadMoreNovels\BookService\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\PConstantin\projects\ReadMoreNovels\BookService\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
