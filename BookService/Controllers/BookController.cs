@@ -5,7 +5,6 @@ using BookService.ApiModels;
 namespace BookService.Controllers;
 
 [ApiController]
-[Route("[controller]")]
 public class BookController : ControllerBase
 {
     

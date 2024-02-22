@@ -1,1 +1,1 @@
-export const BOOK_SERVICE_API = '/api/book/';
+export const BOOK_SERVICE_API = 'http://localhost:5024/Book/api/book';
