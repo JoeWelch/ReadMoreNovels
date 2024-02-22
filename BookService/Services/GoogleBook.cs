@@ -26,7 +26,8 @@ namespace BookService.Services
                 Language = "en",
                 ISBN_13 = "9780547928227",
                 ISBN_10 = "054792822X",
-                SearchInfo = "The Hobbit"
+                SearchInfo = "The Hobbit",
+                query = "id"
             };
         }
 
@@ -50,7 +51,8 @@ namespace BookService.Services
                     Language = "en",
                     ISBN_13 = "9780547928227",
                     ISBN_10 = "054792822X",
-                    SearchInfo = "The Hobbit"
+                    SearchInfo = "The Hobbit",
+                    query = query
                 }
             };
         }

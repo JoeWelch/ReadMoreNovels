@@ -17,5 +17,7 @@ namespace BookService.ApiModels{
         public string ISBN_13 { get; set; }
         public string ISBN_10 { get; set; }
         public string SearchInfo { get; set; }
+
+        public string query { get; set; }
     }
 }
