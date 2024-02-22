@@ -1,0 +1,38 @@
+.search-container {
+    padding: 1rem;
+    width: 60%;
+}
+
+.search-input{ 
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.search-result-top-row {
+    display: flex;
+}
+
+.search-result-image-container {
+    margin-right: 1rem;
+}
+
+.search-result-info-container {
+    margin-top: -8px;
+}
+
+.search-result-title {
+    margin-bottom: 1rem;
+}
+
+.search-result-author {
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+}
+
+.search-result-description {
+    width: 60%;
+}
+
+.search-result-details {
+    margin: 0rem;
+}
