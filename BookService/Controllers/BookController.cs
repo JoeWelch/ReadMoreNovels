@@ -7,7 +7,7 @@ namespace BookService.Controllers;
 [ApiController]
 public class BookController : ControllerBase
 {
-    
+
 
     private readonly ILogger<BookController> _logger;
 
@@ -18,7 +18,14 @@ public class BookController : ControllerBase
         _logger = logger;
         _bookService = bookService;
     }
-    
+
+
+    [HttpGet]
+    [Route("api/version")]
+    public string GetVersion(int id)
+    {
+        return "0.0.2";
+    }
 
     [HttpGet]
     [Route("api/book/{id}")]
@@ -26,7 +33,7 @@ public class BookController : ControllerBase
     {
         return _bookService.GetBook(id);
     }
-    
+
 
     [HttpPost]
     [Route("api/book/search")]
