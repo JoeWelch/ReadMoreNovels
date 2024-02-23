@@ -9,6 +9,7 @@ on:
       - Dev
     paths:
       - 'RMNService/**'
+      - 'BookService/**'
   pull_request:
     types: [opened, synchronize, reopened]
     branches:
