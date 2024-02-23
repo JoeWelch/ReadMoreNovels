@@ -13,7 +13,7 @@ const BOOK = {
   description:
     'How to Change Your Mind chronicles the long and storied history of psychedelic drugs, from their turbulent 1960s heyday to the resulting counter culture movement and backlash. Through his coverage of the recent resurgence in this field of research, as well as his own personal use of psychedelics via a "mental travelogue", Pollan seeks to illuminate not only the mechanics of the drugs themselves, but also the inner workings of the human mind and consciousness.',
   pageCount: 480,
-  genre: "non-fiction",
+  genres: "non-fiction",
   language: "english",
   ISBN_13: "978-1-59420-422-7",
   ISBN_10: "978-1-59420-7",
@@ -24,7 +24,7 @@ const BOOK = {
 export const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([BOOK, BOOK, BOOK, BOOK]);
-  const mutation = useSearch();
+  const mutation = useSearch({setSearchResults});
 
   const handleSearchChange = useCallback((input) => {
     setSearchTerm(input);
@@ -33,7 +33,6 @@ export const Search = () => {
   const handleSearchSubmit = useCallback(() => {
     if (searchTerm.length > 0) {
       mutation.mutate(searchTerm);
-      setSearchResults([BOOK]);
     }
   }, [mutation, searchTerm]);
 

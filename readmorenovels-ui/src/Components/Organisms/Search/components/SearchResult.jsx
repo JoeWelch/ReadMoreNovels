@@ -1,6 +1,5 @@
 import { Image } from "semantic-ui-react";
 import PropTypes from "prop-types";
-import { formatPublishDate } from "../../../../utils/String";
 
 import "../styles/search-result.css";
 
@@ -17,9 +16,7 @@ const SearchResult = ({ result }) => {
         </h4>
         <p className="search-result-description">{result.description}</p>
         <div className="search-result-details">
-          <div className="detail">{`${result.publisher}, ${formatPublishDate(
-            result.publishedDate
-          )}`}</div>
+          <div className="detail">{`${result.publisher}, ${result.publishedDate}`}</div>
           <div className="detail">{`${result.genres}, ${result.language}`}</div>
           <div className="detail">{`${result.pageCount} pages`}</div>
           <div className="detail">{result.ISBN_13}</div>

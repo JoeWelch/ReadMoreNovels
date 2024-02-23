@@ -30,8 +30,8 @@ public class BookController : ControllerBase
 
     [HttpPost]
     [Route("api/book/search")]
-    public List<Book> BookSearch([FromBody]string query)
+    public List<Book> BookSearch([FromBody] SearchRequest request)
     {
-        return _bookService.BookSearch(query);
+        return _bookService.BookSearch(request.Query);
     }
 }
